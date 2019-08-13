@@ -24,13 +24,13 @@ public class Drivetrain extends HSDrivetrain {
     public static final int PRIMARY_INDEX = 0;
     public static final int POSITION_SLOT = 0;
 
-    private static final double LEFT_POSITION_KP = 0;
+    private static final double LEFT_POSITION_KP = 0.8;
     private static final double LEFT_POSITION_KI = 0;
-    private static final double LEFT_POSITION_KD = 0;
+    private static final double LEFT_POSITION_KD = 14;
 
-    private static final double RIGHT_POSITION_KP = 0;
+    private static final double RIGHT_POSITION_KP = 0.8;
     private static final double RIGHT_POSITION_KI = 0;
-    private static final double RIGHT_POSITION_KD = 0;
+    private static final double RIGHT_POSITION_KD = 14;
     
     private Drivetrain() {
         super(new HSTalon(RobotMap.DRIVETRAIN_MASTER_LEFT), 

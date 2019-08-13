@@ -3,12 +3,13 @@ package frc.robot.commands;
 import com.ctre.phoenix.motorcontrol.ControlMode;
 
 import edu.wpi.first.wpilibj.command.Command;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import frc.robot.subsystems.Drivetrain;
 
 public class DriveToPosition extends Command {
     
     private int setpoint;
-    private static final int ALLOWABLE_ERROR = 25;
+    private static final int ALLOWABLE_ERROR = 100;
 
     public DriveToPosition(int finalPosition) {
         requires(Drivetrain.getInstance());
@@ -19,6 +20,8 @@ public class DriveToPosition extends Command {
     protected void initialize() {
         Drivetrain.getInstance().getLeftMaster().selectProfileSlot(Drivetrain.POSITION_SLOT, Drivetrain.PRIMARY_INDEX);
         Drivetrain.getInstance().getRightMaster().selectProfileSlot(Drivetrain.POSITION_SLOT, Drivetrain.PRIMARY_INDEX);
+        Drivetrain.getInstance().getLeftMaster().setSelectedSensorPosition(0);
+        Drivetrain.getInstance().getRightMaster().setSelectedSensorPosition(0);
     }
 
     @Override
