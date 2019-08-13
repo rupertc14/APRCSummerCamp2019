@@ -11,7 +11,7 @@ import harkerrobolib.wrappers.HSTalon;
 public class Drivetrain extends HSDrivetrain {
     private static Drivetrain dt;
     
-    private static final boolean INVERTED_MASTER_LEFT = false;
+    private static final boolean INVERTED_MASTER_LEFT = true;
     private static final boolean INVERTED_MASTER_RIGHT = false;
     private static final boolean INVERTED_FOLLOWER_LEFT = true;
     private static final boolean INVERTED_FOLLOWER_RIGHT = false;
