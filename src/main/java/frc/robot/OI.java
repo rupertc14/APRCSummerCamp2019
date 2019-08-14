@@ -2,6 +2,9 @@ package frc.robot;
 
 import edu.wpi.first.wpilibj.XboxController;
 import frc.robot.commands.DriveToPosition;
+import frc.robot.commands.SetArm;
+import frc.robot.commands.ToggleArm;
+import frc.robot.subsystems.Arm;
 import harkerrobolib.wrappers.XboxGamepad;
 
 public class OI {
@@ -36,9 +39,10 @@ public class OI {
         return operatorGamepad;
     }
 
-    
-
     private void initBindings() {
-        driverGamepad.getButtonY().whenPressed(new DriveToPosition(12288));
+        //driverGamepad.getButtonY().whenPressed(new DriveToPosition(12288));
+        driverGamepad.getButtonA().whenPressed(new ToggleArm());
+        driverGamepad.getButtonB().whenPressed(new SetArm(Arm.ARM_IN));
+        driverGamepad.getButtonX().whenPressed(new SetArm(Arm.ARM_OUT));
     }
 }
