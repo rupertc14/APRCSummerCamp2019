@@ -6,15 +6,15 @@ import frc.robot.subsystems.Arm;
 
 public class SetArm extends InstantCommand {
 
-    private DoubleSolenoid.Value desiredValue;   
+    private DoubleSolenoid.Value armValue;   
     
-    public SetArm(DoubleSolenoid.Value desiredValue) {
-        this.desiredValue = desiredValue;
+    public SetArm(DoubleSolenoid.Value armValue) {
+        this.armValue = armValue;
     }
 
     @Override
     protected void initialize() {
-        Arm.getInstance().setState(desiredValue);
+        Arm.getInstance().setState(armValue);
     }
 
 }

@@ -19,7 +19,7 @@ public class DriveWithPercentOutput extends IndefiniteCommand {
     @Override
     protected void execute() {
         double speed = PERCENT_OUTPUT*(MathUtil.mapJoystickOutput(OI.getInstance().getDriver().getLeftY(), RobotMap.DEADBAND));
-        double turn = PERCENT_OUTPUT*(MathUtil.mapJoystickOutput(OI.getInstance().getOperator().getLeftX(), RobotMap.DEADBAND));
+        double turn = PERCENT_OUTPUT*(MathUtil.mapJoystickOutput(OI.getInstance().getDriver().getLeftX(), RobotMap.DEADBAND));
         
         Drivetrain.getInstance().getLeftMaster().set(ControlMode.PercentOutput, speed+turn);
         Drivetrain.getInstance().getRightMaster().set(ControlMode.PercentOutput, speed-turn);

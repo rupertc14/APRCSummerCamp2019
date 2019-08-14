@@ -10,6 +10,6 @@ public class ToggleFlower extends InstantCommand {
     }
 
     protected void initialize() {
-        Flower.getInstance().setState((Flower.getInstance().getState() == Flower.FLOWER_IN) ? (Flower.FLOWER_OUT) : (Flower.FLOWER_IN));
+        Flower.getInstance().setState((Flower.getInstance().getState() == Flower.FLOWER_CLOSED) ? (Flower.FLOWER_OPEN) : (Flower.FLOWER_CLOSED));
     }
 }
