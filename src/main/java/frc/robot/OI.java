@@ -3,8 +3,14 @@ package frc.robot;
 import edu.wpi.first.wpilibj.XboxController;
 import frc.robot.commands.DriveToPosition;
 import frc.robot.commands.SetArm;
+import frc.robot.commands.SetFlower;
 import frc.robot.commands.ToggleArm;
 import frc.robot.subsystems.Arm;
+import frc.robot.commands.ToggleFlower;
+import frc.robot.commands.SetExtender;
+import frc.robot.commands.ToggleExtender;
+import frc.robot.subsystems.Flower;
+import frc.robot.subsystems.Extender;
 import harkerrobolib.wrappers.XboxGamepad;
 
 public class OI {
@@ -41,8 +47,21 @@ public class OI {
 
     private void initBindings() {
         //driverGamepad.getButtonY().whenPressed(new DriveToPosition(12288));
-        driverGamepad.getButtonA().whenPressed(new ToggleArm());
-        driverGamepad.getButtonB().whenPressed(new SetArm(Arm.ARM_IN));
-        driverGamepad.getButtonX().whenPressed(new SetArm(Arm.ARM_OUT));
+        //driverGamepad.getButtonA().whenPressed(new ToggleArm());
+        
+        operatorGamepad.getButtonY().whenPressed(new SetFlower(Flower.FLOWER_OPEN));
+        operatorGamepad.getButtonX().whenPressed(new SetFlower(Flower.FLOWER_CLOSED))
+        //driverGamepad.getButtonX().whenPressed(new ToggleFlower());
+
+        operatorGamepad.getButtonB().whenPressed(new SetExtender(Extender.EXTENDER_OUT));
+        operatorGamepad.getButtonA().whenPressed(new SetExtender(Extender.EXTENDER_IN));
+        //operatorGamepad.getButtonX().whenPressed(new ToggleExtender());
+        
+        operatorGamepad.getButtonBumperLeft().whenPressed(new ToggleFlower());
+        operatorGamepad.getButtonBumperRight().whenPressed(new ToggleExtender());
+
+        //D-pad up for wrist position
+        //operatorGamepad.DPAD_RIGHT_ANGLE().whenPressed(fjdkfj));
+        //operatorGamepad.DPAD_LEFT_ANGLE().whenPressed(jkjkjk));
     }
 }
