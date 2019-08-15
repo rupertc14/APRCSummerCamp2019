@@ -73,9 +73,6 @@ public class Drivetrain extends HSDrivetrain {
         getLeftFollower().setInverted(INVERTED_FOLLOWER_LEFT);
         getRightMaster().setInverted(INVERTED_MASTER_RIGHT);
         getRightFollower().setInverted(INVERTED_FOLLOWER_RIGHT);
-        
-        getLeftMaster().follow(getLeftFollower());
-        getRightMaster().follow(getRightFollower());
 
         getLeftMaster().setNeutralMode(NeutralMode.Brake);
         getRightMaster().setNeutralMode(NeutralMode.Brake);
@@ -87,7 +84,7 @@ public class Drivetrain extends HSDrivetrain {
         getRightMaster().setSensorPhase(RIGHT_SENSOR_PHASE);
         
         configVoltageComp();
-
+        
         setupPositionPID();
     }
     
