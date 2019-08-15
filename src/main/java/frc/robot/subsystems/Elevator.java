@@ -24,6 +24,8 @@ public class Elevator extends Subsystem {
 
     private static final boolean SENSOR_PHASE = false;
     
+    public static final double FF_GRAV = 0;
+
     private Elevator() {
         master = new HSTalon(RobotMap.ELEVATOR_MASTER);
         talonFollower = new HSTalon(RobotMap.ELEVATOR_TALON_FOLLOWER);
