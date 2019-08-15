@@ -7,6 +7,7 @@ import frc.robot.commands.SetFlower;
 import frc.robot.commands.ToggleArm;
 import frc.robot.subsystems.Arm;
 import frc.robot.commands.ToggleFlower;
+import frc.robot.commands.ZeroElevator;
 import frc.robot.commands.SetExtender;
 import frc.robot.commands.ToggleExtender;
 import frc.robot.subsystems.Flower;
@@ -59,6 +60,8 @@ public class OI {
         
         operatorGamepad.getButtonBumperLeft().whenPressed(new ToggleFlower());
         operatorGamepad.getButtonBumperRight().whenPressed(new ToggleExtender());
+
+        driverGamepad.getDownDPadButton().whenPressed(new ZeroElevator());
 
         //D-pad up for wrist position
         //operatorGamepad.DPAD_RIGHT_ANGLE().whenPressed(fjdkfj));
