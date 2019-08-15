@@ -20,7 +20,7 @@ public class MoveElevatorPercentOutput extends IndefiniteCommand {
 
     @Override
     protected void execute() {
-        elevatorSpeed = MathUtil.mapJoystickOutput(OI.getInstance().getDriver().getRightY(), RobotMap.DEADBAND);
+        elevatorSpeed = MathUtil.mapJoystickOutput(OI.getInstance().getDriver().getRightY(), RobotMap.DRIVER_DEADBAND);
         elevatorSpeed *= SPEED_MULTIPLIER;
         Elevator.getInstance().getMaster().set(ControlMode.PercentOutput, elevatorSpeed, DemandType.ArbitraryFeedForward, Elevator.FF_GRAV);
     }

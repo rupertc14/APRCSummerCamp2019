@@ -30,7 +30,7 @@ public class ZeroElevator extends Command {
 
     @Override
     protected boolean isFinished() {
-        return (Elevator.getInstance().getMaster().getSelectedSensorVelocity() == 0); 
+        return (Timer.getFPGATimestamp() - startTime >= INVALID_TIME && Elevator.getInstance().getMaster().getSelectedSensorVelocity() == 0); 
     }
 
     @Override
