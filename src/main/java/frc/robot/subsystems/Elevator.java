@@ -5,6 +5,7 @@ import com.ctre.phoenix.motorcontrol.can.VictorSPX;
 
 import edu.wpi.first.wpilibj.command.Subsystem;
 import frc.robot.RobotMap;
+import frc.robot.commands.MoveElevatorPercentOutput;
 import harkerrobolib.wrappers.HSTalon;;
 
 public class Elevator extends Subsystem {
@@ -75,6 +76,6 @@ public class Elevator extends Subsystem {
     
     @Override
     protected void initDefaultCommand() {
-
+        setDefaultCommand(new MoveElevatorPercentOutput());
     }
 }
