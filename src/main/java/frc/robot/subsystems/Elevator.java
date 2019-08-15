@@ -6,7 +6,7 @@ import com.ctre.phoenix.motorcontrol.can.VictorSPX;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import frc.robot.RobotMap;
 import frc.robot.commands.MoveElevatorPercentOutput;
-import harkerrobolib.wrappers.HSTalon;;
+import harkerrobolib.wrappers.HSTalon;
 
 public class Elevator extends Subsystem {
 
@@ -24,7 +24,7 @@ public class Elevator extends Subsystem {
 
     private static final boolean SENSOR_PHASE = false;
     
-    public static final double FF_GRAV = 0;
+    public static final double FF_GRAV = 0.14;
 
     private Elevator() {
         master = new HSTalon(RobotMap.ELEVATOR_MASTER);

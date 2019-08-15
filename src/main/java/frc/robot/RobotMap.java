@@ -23,6 +23,9 @@ public class RobotMap {
     
     public static final int EXTENDER_SOLENOID_FORWARD = 6;
     public static final int EXTENDER_SOLENOID_REVERSE = 2;
+
+    public static final int WRIST_MASTER = 0;
+    public static final int WRIST_FOLLOWER = 0;
         
     public static final double DEADBAND = 0.1;
 }
