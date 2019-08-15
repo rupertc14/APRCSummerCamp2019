@@ -50,7 +50,7 @@ public class OI {
         //driverGamepad.getButtonA().whenPressed(new ToggleArm());
         
         operatorGamepad.getButtonY().whenPressed(new SetFlower(Flower.FLOWER_OPEN));
-        operatorGamepad.getButtonX().whenPressed(new SetFlower(Flower.FLOWER_CLOSED))
+        operatorGamepad.getButtonX().whenPressed(new SetFlower(Flower.FLOWER_CLOSED));
         //driverGamepad.getButtonX().whenPressed(new ToggleFlower());
 
         operatorGamepad.getButtonB().whenPressed(new SetExtender(Extender.EXTENDER_OUT));

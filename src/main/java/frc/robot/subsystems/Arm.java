@@ -30,7 +30,7 @@ public class Arm extends Subsystem {
 
     public void setState(DoubleSolenoid.Value value) {
         solenoid.set(value);
-    
+    }
 
     public DoubleSolenoid getSolenoid() {
         return solenoid;
