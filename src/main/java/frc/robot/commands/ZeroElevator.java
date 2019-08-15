@@ -3,15 +3,24 @@ package frc.robot.commands;
 import com.ctre.phoenix.motorcontrol.ControlMode;
 import com.ctre.phoenix.motorcontrol.DemandType;
 
+import edu.wpi.first.wpilibj.Timer;
 import edu.wpi.first.wpilibj.command.Command;
 import frc.robot.subsystems.Elevator;
 
 public class ZeroElevator extends Command {
 
+    private double startTime; 
+
     private static final double DOWN_SPEED = -0.1;
+    private static final double INVALID_TIME = 0.1;
 
     public ZeroElevator() {
         requires(Elevator.getInstance());
+    }
+
+    @Override
+    protected void initialize() {
+        startTime = Timer.getFPGATimestamp();
     }
     
     @Override
@@ -21,7 +30,7 @@ public class ZeroElevator extends Command {
 
     @Override
     protected boolean isFinished() {
-        return (Elevator.getInstance().getMaster().getSelectedSensorVelocity() == 0);
+        return (Elevator.getInstance().getMaster().getSelectedSensorVelocity() == 0); 
     }
 
     @Override
