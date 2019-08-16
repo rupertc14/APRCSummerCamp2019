@@ -6,6 +6,7 @@ import com.ctre.phoenix.motorcontrol.can.VictorSPX;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import harkerrobolib.wrappers.HSTalon;
 import frc.robot.RobotMap;
+import frc.robot.commands.MoveWristPercentOutput;
 
 public class Wrist extends Subsystem {
 

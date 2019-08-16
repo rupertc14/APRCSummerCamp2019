@@ -11,7 +11,7 @@ public class SpinRollers extends IndefiniteCommand {
     public static final double WRIST_ROLLERS_MAGNITUDE = 0;
     public static final double ARM_ROLLERS_MAGNITUDE = 0;
     
-    private SpinRollers() {
+    public SpinRollers() {
         requires(Rollers.getInstance());
     }
 

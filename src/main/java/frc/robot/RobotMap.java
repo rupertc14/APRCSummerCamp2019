@@ -19,7 +19,7 @@ public class RobotMap {
     public static final int WRIST_FOLLOWER = 7;
 
     //CAN IDs - Rollers
-    public static final int WRIST_TALON = 0;
+    public static final int WRIST_TALON = 1;
     public static final int ARM_VICTOR = 0;
     
     //Pneumatics IDs
