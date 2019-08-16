@@ -8,16 +8,18 @@ import harkerrobolib.commands.IndefiniteCommand;
 
 public class SpinRollers extends IndefiniteCommand {
 
-    public static final double WRIST_ROLLERS_MAGNITUDE = 0;
-    public static final double ARM_ROLLERS_MAGNITUDE = 0;
-    
-    private SpinRollers() {
+    private double wristMagnitude;
+    private double armMagnitude;
+
+    public SpinRollers(double wristMagnitude, double armMagnitude) {
         requires(Rollers.getInstance());
+        this.wristMagnitude = wristMagnitude;
+        this.armMagnitude = armMagnitude;
     }
 
     @Override
     protected void execute() {
-        Rollers.getInstance().getWristTalon().set(ControlMode.PercentOutput, WRIST_ROLLERS_MAGNITUDE); 
-        Rollers.getInstance().getArmVictor().set(ControlMode.PercentOutput, ARM_ROLLERS_MAGNITUDE);    
+        Rollers.getInstance().getWristTalon().set(ControlMode.PercentOutput, wristMagnitude); 
+        Rollers.getInstance().getArmVictor().set(ControlMode.PercentOutput, armMagnitude);     
     }
 }

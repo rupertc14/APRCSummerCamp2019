@@ -14,6 +14,11 @@ public class Rollers extends Subsystem {
     private HSTalon wristTalon;
     private VictorSPX armVictor;
     
+    private static final double DEFAULT_WRISTROLLERS_MAGNITUDE = 0;
+    private static final double DEFAULT_ARMROLLERS_MAGNITUDE = 0;
+    public static final double BUTTON_WRISTROLLERS_MAGNITUDE = 0;
+    public static final double BUTTON_ARMROLLERS_MAGNITUDE = 0;;
+
     private Rollers() {
         wristTalon = new HSTalon(RobotMap.WRIST_TALON);
         armVictor = new VictorSPX(RobotMap.ARM_VICTOR);
@@ -37,6 +42,6 @@ public class Rollers extends Subsystem {
 
     @Override
     protected void initDefaultCommand() {
-        setDefaultCommand(new SpinRollers());
+        setDefaultCommand(new SpinRollers(DEFAULT_WRISTROLLERS_MAGNITUDE, DEFAULT_ARMROLLERS_MAGNITUDE));
     }
 }

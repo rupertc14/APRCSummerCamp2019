@@ -4,6 +4,7 @@ import edu.wpi.first.wpilibj.XboxController;
 import frc.robot.commands.DriveToPosition;
 import frc.robot.commands.SetArm;
 import frc.robot.commands.SetFlower;
+import frc.robot.commands.SpinRollers;
 import frc.robot.commands.ToggleArm;
 import frc.robot.subsystems.Arm;
 import frc.robot.commands.ToggleFlower;
@@ -64,6 +65,8 @@ public class OI {
         operatorGamepad.getButtonBumperRight().whenPressed(new ToggleExtender());
 
         driverGamepad.getDownDPadButton().whenPressed(new ZeroElevator());
+
+        driverGamepad.getButtonY().whenPressed(new SpinRollers(Rollers.BUTTON_WRISTROLLERS_MAGNITUDE, Rollers.BUTTON_WRISTROLLERS_MAGNITUDE));
 
         //D-pad up for wrist position
         //operatorGamepad.DPAD_RIGHT_ANGLE().whenPressed(fjdkfj));

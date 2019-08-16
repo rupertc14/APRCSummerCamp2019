@@ -22,7 +22,7 @@ public class ZeroElevator extends Command {
     protected void initialize() {
         startTime = Timer.getFPGATimestamp();
         Elevator.getInstance().getMaster().configForwardSoftLimitEnable(false);
-        ;
+        Elevator.getInstance().getMaster().configReverseSoftLimitEnable(false);
     }
     
     @Override
@@ -45,6 +45,6 @@ public class ZeroElevator extends Command {
         Elevator.getInstance().getMaster().set(ControlMode.Disabled, 0);
         Elevator.getInstance().getMaster().setSelectedSensorPosition(0);
         Elevator.getInstance().getMaster().configForwardSoftLimitEnable(true);
-        Elevator.getInstance
+        Elevator.getInstance().getMaster().configReverseSoftLimitEnable(true);
     }
 }

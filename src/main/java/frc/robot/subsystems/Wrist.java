@@ -19,10 +19,13 @@ public class Wrist extends Subsystem {
 
     private static final boolean SENSOR_PHASE = true;
     
-    private static final double HORIZONTAL_FRONT = 0;
-    private static final double HORIZONTAL_BACK = 0;
+    private static final double HORIZONTAL_FRONT = 130;
+    private static final double HORIZONTAL_BACK = 2160; 
     private static final double FRONTMOST_POSITION = 0;
     private static final double BACKMOST_POSITION = 0;
+
+    private static final double UPPER_SOFT_LIMIT = 0;
+    private static final double LOWER_SOFT_LIMIT = 0;
 
     private Wrist() {
         master = new HSTalon(RobotMap.WRIST_MASTER);
@@ -44,6 +47,11 @@ public class Wrist extends Subsystem {
 
         master.configSelectedFeedbackSensor(FeedbackDevice.CTRE_MagEncoder_Relative);
         master.setSensorPhase(SENSOR_PHASE);      
+
+        master.configForwardSoftLimitThreshold(UPPER_SOFT_LIMIT);
+        master.configReverseSoftLimitThreshold(LOWER_SOFT_LIMIT);
+        master.configForwardSoftLimitEnable(true);
+        master.configReverseSoftLimitEnable(true);
     }
         
     public static Wrist getInstance() {
