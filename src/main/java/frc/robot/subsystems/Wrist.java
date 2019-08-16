@@ -35,15 +35,12 @@ public class Wrist extends Subsystem {
         talonInit();
     }
 
-<<<<<<< HEAD
     public double convertTickstoFF(int ticks) {
         double degrees = ticks * (360 / 4096);
         double radians = Math.toRadians(degrees);
         return Math.cos(radians) * FF_GRAV_MULTIPLIER;
     }
 
-=======
->>>>>>> befa78b3a4a1fd71aeb2d9e4b81ac7fd58ed8286
     public HSTalon getMaster() {
         return master;
     }
