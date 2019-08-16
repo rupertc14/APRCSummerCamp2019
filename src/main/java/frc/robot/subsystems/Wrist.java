@@ -24,8 +24,8 @@ public class Wrist extends Subsystem {
     private static final double FRONTMOST_POSITION = 0;
     private static final double BACKMOST_POSITION = 0;
 
-    private static final double UPPER_SOFT_LIMIT = 0;
-    private static final double LOWER_SOFT_LIMIT = 0;
+    private static final int UPPER_SOFT_LIMIT = 0;
+    private static final int LOWER_SOFT_LIMIT = 0;
 
     private static final double FF_GRAV_MULTIPLIER = 0.1;
 
@@ -35,12 +35,15 @@ public class Wrist extends Subsystem {
         talonInit();
     }
 
+<<<<<<< HEAD
     public double convertTickstoFF(int ticks) {
         double degrees = ticks * (360 / 4096);
         double radians = Math.toRadians(degrees);
         return Math.cos(radians) * FF_GRAV_MULTIPLIER;
     }
 
+=======
+>>>>>>> befa78b3a4a1fd71aeb2d9e4b81ac7fd58ed8286
     public HSTalon getMaster() {
         return master;
     }
@@ -65,6 +68,7 @@ public class Wrist extends Subsystem {
     public static Wrist getInstance() {
         if(wrist == null) {
             wrist = new Wrist();
+            
         }
         return wrist;
     }

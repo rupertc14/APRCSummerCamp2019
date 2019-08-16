@@ -14,10 +14,12 @@ public class Rollers extends Subsystem {
     private HSTalon wristTalon;
     private VictorSPX armVictor;
     
-    private static final double DEFAULT_WRISTROLLERS_MAGNITUDE_INTAKE = 0.2;
-    private static final double DEFAULT_ARMROLLERS_MAGNITUDE_INTAKE = 0.2;
-    public static final double BUTTON_WRISTROLLERS_MAGNITUDE_INTAKE = 0.5;
-    public static final double BUTTON_ARMROLLERS_MAGNITUDE_INTAKE = 0.4;
+    private static final double DEFAULT_WRISTROLLERS_MAGNITUDE_INTAKE = -0.4;
+    private static final double DEFAULT_ARMROLLERS_MAGNITUDE_INTAKE = 0;
+    public static final double BUTTON_WRISTROLLERS_MAGNITUDE_OUTTAKE = 0.5;
+    public static final double BUTTON_ARMROLLERS_MAGNITUDE_OUTTAKE = 0.4;
+    public static final double BUTTON_WRISTROLLERS_MAGNITUDE_INTAKE = -0.5;
+    public static final double BUTTON_ARMROLLERS_MAGNITUDE_INTAKE = -0.4;
 
     private Rollers() {
         wristTalon = new HSTalon(RobotMap.WRIST_TALON);

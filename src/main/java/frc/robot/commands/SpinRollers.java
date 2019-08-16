@@ -8,6 +8,7 @@ import harkerrobolib.commands.IndefiniteCommand;
 
 public class SpinRollers extends IndefiniteCommand {
 
+    private double wristMagnitude;
     private double armMagnitude;
 
     public SpinRollers(double wristMagnitude, double armMagnitude) {

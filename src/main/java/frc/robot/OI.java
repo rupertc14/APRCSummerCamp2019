@@ -66,10 +66,11 @@ public class OI {
 
         driverGamepad.getDownDPadButton().whenPressed(new ZeroElevator());
 
-        driverGamepad.getButtonY().whenPressed(new SpinRollers(Rollers.BUTTON_WRISTROLLERS_MAGNITUDE, Rollers.BUTTON_WRISTROLLERS_MAGNITUDE));
-
+        driverGamepad.getButtonY().whilePressed(new SpinRollers(Rollers.BUTTON_WRISTROLLERS_MAGNITUDE_INTAKE, Rollers.BUTTON_ARMROLLERS_MAGNITUDE_INTAKE));
+        driverGamepad.getButtonA().whilePressed(new SpinRollers(Rollers.BUTTON_WRISTROLLERS_MAGNITUDE_OUTTAKE, Rollers.BUTTON_ARMROLLERS_MAGNITUDE_OUTTAKE));
         //D-pad up for wrist position
         //operatorGamepad.DPAD_RIGHT_ANGLE().whenPressed(fjdkfj));
+
         //operatorGamepad.DPAD_LEFT_ANGLE().whenPressed(jkjkjk));
     }
 }
