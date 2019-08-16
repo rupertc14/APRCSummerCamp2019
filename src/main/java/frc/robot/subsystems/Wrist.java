@@ -27,10 +27,16 @@ public class Wrist extends Subsystem {
     private static final double UPPER_SOFT_LIMIT = 0;
     private static final double LOWER_SOFT_LIMIT = 0;
 
+    private static final double FF_GRAV_MULTIPLIER = 0;
+
     private Wrist() {
         master = new HSTalon(RobotMap.WRIST_MASTER);
         follower = new VictorSPX(RobotMap.WRIST_FOLLOWER);
         talonInit();
+    }
+
+    public double convertTickstoDegrees(int t) {
+
     }
 
     public HSTalon getMaster() {
