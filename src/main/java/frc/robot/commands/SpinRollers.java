@@ -13,12 +13,6 @@ public class SpinRollers extends IndefiniteCommand {
 
     public SpinRollers(double wristMagnitude, double armMagnitude) {
         requires(Rollers.getInstance());
-        this.wristMagnitude = wristMagnitude;
-        this.armMagnitude = armMagnitude;
-    }
-
-    @Override
-    protected void execute() {
         Rollers.getInstance().getWristTalon().set(ControlMode.PercentOutput, wristMagnitude); 
         Rollers.getInstance().getArmVictor().set(ControlMode.PercentOutput, armMagnitude);     
     }

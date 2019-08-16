@@ -21,7 +21,8 @@ public class MoveWristPercentOutput extends IndefiniteCommand {
     @Override
     public void execute() {
          double wristSpeed = SPEED_MULTIPLIER * MathUtil.mapJoystickOutput(OI.getInstance().getOperator().getRightX(), RobotMap.OPERATOR_DEADBAND) ;
-         Wrist.getInstance().getMaster().set(ControlMode.PercentOutput, wristSpeed);
+         Wrist.getInstance().getMaster().set(ControlMode.PercentOutput, wristSpeed, DemandType.ArbitraryFeedForward, 
+         Wrist.getInstance().convertTickstoFF(Wrist.getInstance().getMaster().getSelectedSensorPosition()));
     }
 
     @Override
