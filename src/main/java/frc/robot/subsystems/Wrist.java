@@ -6,7 +6,6 @@ import com.ctre.phoenix.motorcontrol.can.VictorSPX;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import harkerrobolib.wrappers.HSTalon;
 import frc.robot.RobotMap;
-import frc.robot.commands.MoveWristPercentOutput;
 
 public class Wrist extends Subsystem {
 
@@ -28,7 +27,7 @@ public class Wrist extends Subsystem {
     private static final double UPPER_SOFT_LIMIT = 0;
     private static final double LOWER_SOFT_LIMIT = 0;
 
-    private static final double FF_GRAV_MULTIPLIER = 0;
+    private static final double FF_GRAV_MULTIPLIER = 0.1;
 
     private Wrist() {
         master = new HSTalon(RobotMap.WRIST_MASTER);
@@ -36,8 +35,10 @@ public class Wrist extends Subsystem {
         talonInit();
     }
 
-    public double convertTickstoDegrees(int t) {
-
+    public double convertTickstoFF(int ticks) {
+        double degrees = ticks * (360 / 4096);
+        double radians = Math.toRadians(degrees);
+        return Math.cos(radians) * FF_GRAV_MULTIPLIER;
     }
 
     public HSTalon getMaster() {
