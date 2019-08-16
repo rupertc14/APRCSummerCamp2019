@@ -22,7 +22,10 @@ public class Elevator extends Subsystem {
     private static final boolean INVERSION_FOLLOWER_LEFT = true;
     private static final boolean INVERSION_FOLLOWER_RIGHT = true;
 
-    private static final boolean SENSOR_PHASE = false;
+    private static final boolean SENSOR_PHASE = true;
+
+    private static final int UPPER_SOFT_LIMIT = 17832;
+    private static final int LOWER_SOFT_LIMIT = 200;
     
     public static final double FF_GRAV = 0.14;
 
@@ -74,6 +77,12 @@ public class Elevator extends Subsystem {
         master.setSensorPhase(SENSOR_PHASE);
 
         master.setSelectedSensorPosition(0);
+        
+        master.configForwardSoftLimitThreshold(UPPER_SOFT_LIMIT);
+        master.configReverseSoftLimitThreshold(LOWER_SOFT_LIMIT);
+        master.configForwardSoftLimitEnable(true);
+        master.configReverseSoftLimitEnable(true);
+   
     }
     
     @Override
@@ -81,3 +90,4 @@ public class Elevator extends Subsystem {
         setDefaultCommand(new MoveElevatorPercentOutput());
     }
 }
+

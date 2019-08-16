@@ -21,6 +21,8 @@ public class ZeroElevator extends Command {
     @Override
     protected void initialize() {
         startTime = Timer.getFPGATimestamp();
+        Elevator.getInstance().getMaster().configForwardSoftLimitEnable(false);
+        ;
     }
     
     @Override
@@ -32,7 +34,7 @@ public class ZeroElevator extends Command {
     protected boolean isFinished() {
         return (Timer.getFPGATimestamp() - startTime >= INVALID_TIME && Elevator.getInstance().getMaster().getSelectedSensorVelocity() == 0); 
     }
-
+                                                                             
     @Override
     protected void interrupted() {
         Elevator.getInstance().getMaster().set(ControlMode.Disabled, 0);
@@ -42,5 +44,7 @@ public class ZeroElevator extends Command {
     protected void end(){
         Elevator.getInstance().getMaster().set(ControlMode.Disabled, 0);
         Elevator.getInstance().getMaster().setSelectedSensorPosition(0);
+        Elevator.getInstance().getMaster().configForwardSoftLimitEnable(true);
+        Elevator.getInstance
     }
 }
