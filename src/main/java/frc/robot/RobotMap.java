@@ -17,6 +17,10 @@ public class RobotMap {
     //CAN IDs - Wrist
     public static final int WRIST_MASTER = 5;
     public static final int WRIST_FOLLOWER = 7;
+
+    //CAN IDs - Rollers
+    public static final int WRIST_TALON = 0;
+    public static final int ARM_VICTOR = 0;
     
     //Pneumatics IDs
     public static final int ARM_SOLENOID_FORWARD = 4;

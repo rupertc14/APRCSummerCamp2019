@@ -17,6 +17,7 @@ import frc.robot.subsystems.Extender;
 import frc.robot.subsystems.Flower;
 import frc.robot.subsystems.Wrist;
 import frc.robot.subsystems.Elevator;
+import frc.robot.subsystems.Rollers;
 
 /**
  * The VM is configured to automatically run this class, and to call the
@@ -61,6 +62,7 @@ public class Robot extends TimedRobot {
   @Override
   public void robotPeriodic() {
     Scheduler.getInstance().run();
+    SmartDashboard.putNumber("wrist pos", Wrist.getInstance().getMaster().getSelectedSensorPosition());
   }
 
   /**
