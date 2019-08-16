@@ -12,7 +12,7 @@ import harkerrobolib.util.MathUtil;
 
 public class MoveWristPercentOutput extends IndefiniteCommand {
 
-    private static final double SPEED_MULTIPLIER = 0.2;
+    private static final double SPEED_MULTIPLIER = 0.25;
    
     public MoveWristPercentOutput() {
         requires(Wrist.getInstance());
@@ -20,7 +20,8 @@ public class MoveWristPercentOutput extends IndefiniteCommand {
 
     @Override
     public void execute() {
-         double wristSpeed = MathUtil.mapJoystickOutput(OI.getInstance().getOperator().getRightX(), RobotMap.OPERATOR_DEADBAND) * SPEED_MULTIPLIER;
+         double wristSpeed = SPEED_MULTIPLIER * MathUtil.mapJoystickOutput(OI.getInstance().getOperator().getRightX(), RobotMap.OPERATOR_DEADBAND) ;
+         Wrist.getInstance().getMaster().set(ControlMode.PercentOutput, wristSpeed);
     }
 
     @Override
